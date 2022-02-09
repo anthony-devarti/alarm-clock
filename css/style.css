@@ -1,1 +1,10 @@
-
+html {
+    padding-top: 50px;
+}
+body {
+    border: 12px whitesmoke
+    height: auto
+    width: auto
+    border radius: 30px
+    background:img/background.jpg
+}
