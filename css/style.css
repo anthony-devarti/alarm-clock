@@ -1,10 +1,17 @@
-html {
-    padding-top: 50px;
+.clock {
+    background: darkgray;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
 }
-body {
-    border: 12px whitesmoke
-    height:auto
-    width:auto
-    border radius: 30px
-    background:img/background.jpg
+.clock-time
+.clock-ampm {
+    font-family: sans-serif;
+    font-family: 30px;
+    color: lightcoral;
+}
+
+.clock-time{
+    font-size: 40px;
 }

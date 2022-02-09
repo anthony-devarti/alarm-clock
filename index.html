@@ -1,15 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alarm Clock</title>
-    <!--Attempting to make the page resize to fit the device width-->
-    <meta width:device width>
-    <!--link to css -->
-    <link href="css/style.css">
-    <body>
-    <!--a divider for the clock itself.  This doesn't seem right, making a note in case I need to remove this later-->
-    <div id="app">
-        <h1>What time is it?</h1>
-        <div id-"current-time"></div>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="clock">
+        <span class="clock-time"> 10:30</span>
+        <span class="clock-ampm"> PM</span>
     </div>
-    <!--Putting the link to the javascript towards the bottom so it will be loaded after structural elements-->
-    </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
