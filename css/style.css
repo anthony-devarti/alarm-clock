@@ -12,6 +12,13 @@
     color: lightcoral;
 }
 
-.clock-time{
+.clock-time,
+.clock-ampm {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:antiquewhite
+}
+
+.clock-time {
     font-size: 40px;
 }
