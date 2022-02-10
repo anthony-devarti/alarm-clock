@@ -3,20 +3,29 @@ class DigitalClock {
         this.element = element;
     }
 
-    update{} {
+    start() {
+        this.update();
+
+        setInterval(() => {
+            this.update(); 
+        }, 500);
+    }
+    update() {
         const parts = this.getTimeParts();
         /*making it so that the time displays with a leading 0 when the minutes are in the single digits
-        this creates a variable called minutesFormatted that stores _*/
+        this creates a variable called minutesFormatted*/
         const minuteFormatted = parts.minutes.toString().padStart(2, '0');
         const timeFormatted = `${parts.hour}:${minutesFormatted}`;
         const amPm = parts.isAM ? 'AM' : 'PM';
 
-        this.element.querySelector(".clock-time").textContent = timeFormatted;
+        this.element.querySelector('.clock-time').textContent = timeFormatted;
+        this.element.querySelector('clock-ampm').textContent = amPm;
 
-        console.log(timeFormatted);
     }
+
     getTimeParts() {
         const now = new Date();
+
         //creates the 3 values for hours, minutes, and am or pm
         return {
             /*the mod function here is present to find the remainder after divided
@@ -28,10 +37,9 @@ class DigitalClock {
             isAm: now.getHours < 12
         };
     }
-
+}
 
 const clockElement = document.querySelector('.clock');
 const clockObject = new DigitalClock(clockElement);
 
-console.log(clockObject.getTimeParts());
-
+clockObjext.start();
