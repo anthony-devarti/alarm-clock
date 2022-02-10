@@ -24,7 +24,8 @@
     font-size: 40px;
 }
 
-.alarm {
+.Alarm {
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
 }
