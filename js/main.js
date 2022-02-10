@@ -31,7 +31,7 @@ class DigitalClock {
             /*the mod function here is present to find the remainder after divided
              by 12 for a 12 hour clock and checks to see if the value is falsy 
              (I think that's only 0, here) and will replace it with 12*/
-            hour: now.getHours() % 12 || 12
+            hour: now.getHours() % 12 || 12,
             minute: now.getMinutes(),
             //shows AM if hours are <12
             isAm: now.getHours < 12
