@@ -42,4 +42,4 @@ class DigitalClock {
 const clockElement = document.querySelector('.clock');
 const clockObject = new DigitalClock(clockElement);
 
-clockObjext.start();
+clockObject.start();
