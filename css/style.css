@@ -23,3 +23,8 @@
 .clock-time {
     font-size: 40px;
 }
+
+.alarm {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
