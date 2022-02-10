@@ -38,6 +38,20 @@ class DigitalClock {
     }
 }
 
+let alarmTime = '00:00:00';
+
+function alarmTimeSet() {
+    //This will give the set alarm button something to do to save a time as a variable named alarmTime
+    
+}
+
+function clearAlarmTime() {
+    //This will re-set the mutable variable of the alarm time to the default placeholder time of 00:00:00
+    let alarmTime = '00:00:00';
+}
+
+/*Some sort of if statement that plays a sound when the alarmTime variable == the current time*/
+
 const clockElement = document.querySelector('.clock');
 const clockObject = new DigitalClock(clockElement);
 
