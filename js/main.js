@@ -31,7 +31,7 @@ class DigitalClock {
             hour: now.getHours() % 12 || 12,
             minute: now.getMinutes(),
             //shows AM if hours are <12
-            isAm: now.getHours < 12
+            isAm: now.getHours() < 12
         };
     }
 }
