@@ -10,18 +10,15 @@ class DigitalClock {
             this.update(); 
         }, 500);
     }
-    update() {
-        const parts = this.getTimeParts();
-        /*making it so that the time displays with a leading 0 when the minutes are in the single digits
-        this creates a variable called minutesFormatted*/
-        const minuteFormatted = parts.minutes.toString().padStart(2, '0');
-        const timeFormatted = `${parts.hour}:${minutesFormatted}`;
-        const amPm = parts.isAM ? 'AM' : 'PM';
 
-        this.element.querySelector('.clock-time').textContent = timeFormatted;
-        this.element.querySelector('clock-ampm').textContent = amPm;
-
-    }
+    update() {	
+        const parts = this.getTimeParts();	
+        const minuteFormatted = parts.minute.toString().padStart(2, "0");	
+        const timeFormatted = `${parts.hour}:${minuteFormatted}`;	
+        const amPm = parts.isAm ? "AM" : "PM";	
+        this.element.querySelector(".clock-time").textContent = timeFormatted;	
+        this.element.querySelector(".clock-ampm").textContent = amPm;	
+      }
 
     getTimeParts() {
         const now = new Date();
