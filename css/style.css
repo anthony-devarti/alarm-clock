@@ -1,1 +1,36 @@
+.clock {
+    background: darkgray;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10%;
+}
+.clock-time
+.clock-ampm {
+    font-family: sans-serif;
+    font-family: 30px;
+    color: lightcoral;
+}
 
+.clock-time,
+.clock-ampm {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:antiquewhite
+}
+
+.clock-time {
+    font-size: 40px;
+}
+
+.Alarm {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+
+}
+.button {
+    border-radius: 10px;
+    background: antiquewhite;
+}

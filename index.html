@@ -1,4 +1,55 @@
-<div id="app">
-    <h1>What time is it?</h1>
-    <div id-"current-time"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <center>
+        <div class="clock">
+            <span class="clock-time"></span>
+            <span class="clock-ampm"></span>
+        </div>
+
+        <div class="Alarm">
+            <h4>Alarm</h4>
+            <select id="hourInput">
+                <option value="12">12</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+            </select>
+            
+            <select id="minuteInput">
+                <option value="00">00</option>
+                <option value="'10">10</option>
+                <option value="'20">20</option>
+                <option value="'30">30</option>
+                <option value="'40">40</option>
+                <option value="'50">50</option>
+            </select>
+            
+            <select id="ampmInput">
+                <option value="true">AM</option>
+                <option value="false">PM</option>
+            </select>
+            <br>
+            <button type="button" name="set" class="button" onclick="alarmTimeSet()">Set Alarm</button>
+            <button type="button" name="cancel" class="button" onclick="clearAlarmTime()"">Cancel Alarm</button>
+        </div>
+    </center>
+    
+<script src="js/main.js"></script>
+</body>
+
+</html>
