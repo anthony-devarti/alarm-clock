@@ -48,7 +48,8 @@ let userAlarmTime = {
     userAmpm: true
 }
 
-
+const compareTime = new Date();
+const [hour, minutes] = [date.getHours(), date.getMinutes()];
 
 function alarmTimeSet() {
     //This will give the set alarm button something to do to save a time as a variable named alarmTime
@@ -58,7 +59,7 @@ function alarmTimeSet() {
     let userAmpm = document.getElementById('ampmInput').value
     alert('Alarm Set!')
     let userAlarmTime = {userHours, userMinutes, userSeconds, userAmpm}
-    console.log(userAlarmTime)
+    return userAlarmTime
     };
 
 
@@ -71,11 +72,13 @@ function clearAlarmTime() {
         userAmpm: '00'
     }
 }
-
-
 //Some sort of if statement that displays an alert when the alarmTime variable == the current time.
-if (userAlarmTime == getTimeParts()) {
-    alert = 'Alarm!'
+var audio  = new Audio(audio/alarmsound.wav);
+    audio.play();
+
+
+if (alarmTimeSet >= compareTime) {
+    alert = 'Alarm!', audio.play();
 }
 
 
@@ -83,3 +86,7 @@ const clockElement = document.querySelector('.clock');
 const clockObject = new DigitalClock(clockElement);
 
 clockObject.start();
+
+function newFunction() {
+    return '/workspace/alarm-clock/audio/alarmsound.wav';
+}
