@@ -45,7 +45,7 @@ let userAlarmTime = {
     userHours: '00',
     userMinutes: '00',
     userSeconds: '00',
-    userAmpm: '00'
+    userAmpm: true
 }
 
 
@@ -59,7 +59,7 @@ function alarmTimeSet() {
     alert('Alarm Set!')
     let userAlarmTime = {userHours, userMinutes, userSeconds, userAmpm}
     console.log(userAlarmTime)
-    }
+    };
 
 
 function clearAlarmTime() {
@@ -73,10 +73,10 @@ function clearAlarmTime() {
 }
 
 
-/*Some sort of if statement that displays an alert when the alarmTime variable == the current time.
-if (userAlarmTime == timeFormatted) {
+//Some sort of if statement that displays an alert when the alarmTime variable == the current time.
+if (userAlarmTime == getTimeParts()) {
     alert = 'Alarm!'
-}*/
+}
 
 
 const clockElement = document.querySelector('.clock');
