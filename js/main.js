@@ -34,27 +34,45 @@ class DigitalClock {
             second: now.getSeconds(),
             //shows AM if hours are <12
             isAm: now.getHours() < 12
+        
         };
     }
 }
 //maybe making this an array will make it easier to compare the two?  an if else statement where if all 3 attributes match, it will play a sound.
-let alarmTime = {
-    hours: '00',
-    minutes: '00',
-    seconds: '00'
-};
+let userAlarmTime = {
+    userHours: '00',
+    userMinutes: '00',
+    userSeconds: '00',
+    userAmpm: '00'
+}
 
 function alarmTimeSet() {
     //This will give the set alarm button something to do to save a time as a variable named alarmTime
-    
-}
+    let userHours = document.getElementById('hourInput').value
+    let userMinutes = document.getElementById('minuteInput').value
+    let userSeconds = '00'
+    let userAmpm = document.getElementById('ampmInput').value
+    alert('Alarm Set!')
+    let userAlarmTime = {userHours, userMinutes, userSeconds, userAmpm}
+    console.log(userAlarmTime)
+    }
+
 
 function clearAlarmTime() {
     //This will re-set the mutable variable of the alarm time to the default placeholder time of 00:00:00
-    let alarmTime = '00:00:00';
+    let userAlarmTime = {
+        userHours: '00',
+        userMinutes: '00',
+        userSeconds: '00',
+        userAmpm: '00'
+    }
 }
 
-/*Some sort of if statement that plays a sound when the alarmTime variable == the current time.  Maybe I can map the string to compare the 2?*/
+/*Some sort of if statement that displays an alert when the alarmTime variable == the current time.
+if (userAlarmTime == timeFormatted) {
+    alert = 'Alarm!'
+}*/
+
 
 const clockElement = document.querySelector('.clock');
 const clockObject = new DigitalClock(clockElement);
