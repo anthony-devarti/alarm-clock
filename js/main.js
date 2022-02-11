@@ -1,8 +1,10 @@
+//attempt at making a global timeFormatted variable that can be compared to the userAlarmTime variable.
+let timeFormatted = '00:00:00'
 class DigitalClock {
     constructor(element) {
         this.element = element;
     }
-
+//Sets the interval for updating the time so that you don't need to refresh the page every second
     start() {
         this.update();
 
@@ -10,7 +12,7 @@ class DigitalClock {
             this.update(); 
         }, 500);
     }
-
+//This should help us to format the time so that it has an appropriate leading 0 so the numbers don't change positions
     update() {	
         const parts = this.getTimeParts();
         const secondFormatted = parts.second.toString().padStart(2, "0")	
@@ -46,6 +48,8 @@ let userAlarmTime = {
     userAmpm: '00'
 }
 
+
+
 function alarmTimeSet() {
     //This will give the set alarm button something to do to save a time as a variable named alarmTime
     let userHours = document.getElementById('hourInput').value
@@ -59,7 +63,7 @@ function alarmTimeSet() {
 
 
 function clearAlarmTime() {
-    //This will re-set the mutable variable of the alarm time to the default placeholder time of 00:00:00
+    //This will re-set the mutable variable of the alarm time to the default placeholder time of 00:00:00.  Not sure why the variable is declared and never read.  I made a userAlarmTime global variable that was read by the previous function just fine.
     let userAlarmTime = {
         userHours: '00',
         userMinutes: '00',
@@ -67,6 +71,7 @@ function clearAlarmTime() {
         userAmpm: '00'
     }
 }
+
 
 /*Some sort of if statement that displays an alert when the alarmTime variable == the current time.
 if (userAlarmTime == timeFormatted) {
