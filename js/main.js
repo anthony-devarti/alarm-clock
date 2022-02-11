@@ -47,9 +47,10 @@ let userAlarmTime = {
     userSeconds: '00',
     userAmpm: true
 }
-
+/*
 const compareTime = new Date();
 const [hour, minutes] = [date.getHours(), date.getMinutes()];
+
 
 function alarmTimeSet() {
     //This will give the set alarm button something to do to save a time as a variable named alarmTime
@@ -80,7 +81,7 @@ var audio  = new Audio(audio/alarmsound.wav);
 if (alarmTimeSet >= compareTime) {
     alert = 'Alarm!', audio.play();
 }
-
+*/
 
 const clockElement = document.querySelector('.clock');
 const clockObject = new DigitalClock(clockElement);
