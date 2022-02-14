@@ -1,15 +1,19 @@
-//attempt at making a global timeFormatted variable that can be compared to the userAlarmTime variable.
-let timeFormatted = '00:00:00'
 class DigitalClock {
     constructor(element) {
         this.element = element;
     }
-//Sets the interval for updating the time so that you don't need to refresh the page every second
+//Sets the interval for updating the time so that you don't need to refresh the page every second. Also checks for alarm
     start() {
         this.update();
 
         setInterval(() => {
             this.update(); 
+            const parts = this.getTimeParts();
+            if (userAlarmTime.userHours === parts.hour && userAlarmTime.userMinutes === parts.minute && userAlarmTime.userAmpm === parts.isAm){
+                audio.play()
+                alert('Alarm!')
+            }
+        
         }, 500);
     }
 //This should help us to format the time so that it has an appropriate leading 0 so the numbers don't change positions
@@ -40,16 +44,16 @@ class DigitalClock {
         };
     }
 }
-//maybe making this an array will make it easier to compare the two?  an if else statement where if all 3 attributes match, it will play a sound.
+//maybe making this an object will make it easier to compare the two?  an if else statement where if all 3 attributes match, it will play a sound.
 let userAlarmTime = {
     userHours: '00',
     userMinutes: '00',
     userSeconds: '00',
     userAmpm: true
 }
-/*
+
 const compareTime = new Date();
-const [hour, minutes] = [date.getHours(), date.getMinutes()];
+const [hour, minutes] = [compareTime.getHours(), compareTime.getMinutes()];
 
 
 function alarmTimeSet() {
@@ -57,11 +61,11 @@ function alarmTimeSet() {
     let userHours = document.getElementById('hourInput').value
     let userMinutes = document.getElementById('minuteInput').value
     let userSeconds = '00'
-    let userAmpm = document.getElementById('ampmInput').value
-    alert('Alarm Set!')
-    let userAlarmTime = {userHours, userMinutes, userSeconds, userAmpm}
+    let userAmpm = document.getElementById('ampmInput').value.toLowerCase() === 'true'
+    userAlarmTime = {userHours, userMinutes, userSeconds, userAmpm}
+    console.log(userAlarmTime)
     return userAlarmTime
-    };
+    }
 
 
 function clearAlarmTime() {
@@ -74,14 +78,9 @@ function clearAlarmTime() {
     }
 }
 //Some sort of if statement that displays an alert when the alarmTime variable == the current time.
-var audio  = new Audio(audio/alarmsound.wav);
-    audio.play();
+var audio  = new Audio('../audio/alarmsound.wav');
+   // audio.play();
 
-
-if (alarmTimeSet >= compareTime) {
-    alert = 'Alarm!', audio.play();
-}
-*/
 
 const clockElement = document.querySelector('.clock');
 const clockObject = new DigitalClock(clockElement);
