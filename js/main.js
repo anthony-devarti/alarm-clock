@@ -9,9 +9,10 @@ class DigitalClock {
         setInterval(() => {
             this.update(); 
             const parts = this.getTimeParts();
-            if (userAlarmTime.userHours === parts.hour && userAlarmTime.userMinutes === parts.minute && userAlarmTime.userAmpm === parts.isAm){
-                audio.play()
-                alert('Alarm!')
+            if (parseInt(userAlarmTime.userHours) === parts.hour && parseInt (userAlarmTime.userMinutes) === parts.minute && userAlarmTime.userAmpm === parts.isAm){
+                audio.play();
+                alert('Alarm!');
+                clearAlarmTime();
             }
         
         }, 500);
@@ -70,7 +71,7 @@ function alarmTimeSet() {
 
 function clearAlarmTime() {
     //This will re-set the mutable variable of the alarm time to the default placeholder time of 00:00:00.  Not sure why the variable is declared and never read.  I made a userAlarmTime global variable that was read by the previous function just fine.
-    let userAlarmTime = {
+    userAlarmTime = {
         userHours: '00',
         userMinutes: '00',
         userSeconds: '00',
